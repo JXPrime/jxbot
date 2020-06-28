@@ -6,6 +6,8 @@ const _ = require('underscore');
 
 const smilies = [];
 
+const token = process.argv[2];
+
 async function processSmilies(){
   const fileStream = fs.createReadStream('./data/keyfile.txt');
   const rl = readline.createInterface({
@@ -47,4 +49,4 @@ client.on('message', message => {
   message.channel.send(exampleEmbed);
 })
 
-client.login('NjQwMzYyMzk3NjY3ODE5NTIw.XvfTyQ.hJ4LoZHszNnrh-LZ9NhZvLhZo7M')
+client.login(token)
