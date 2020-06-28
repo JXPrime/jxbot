@@ -1,0 +1,11 @@
+{
+    "name": "JXBot",
+    "version": "0.0.1",
+    "description": "JX Bot",
+    "main": "bot.js",
+    "author": "JXPrime",
+    "dependencies": {
+        "discord.js": "^12.2.0",
+        "underscore": "^1.10.2"
+    }
+}
