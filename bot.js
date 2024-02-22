@@ -2,7 +2,6 @@ const Discord = require('discord.js')
 const client = new Discord.Client() 
 const fs = require('fs');
 const readline = require('readline');
-const _ = require('underscore');
 
 const smilies = [];
 
@@ -36,7 +35,7 @@ client.on('ready', () => {
 }) 
 
 client.on('message', message => {
-  var theSmilie = _.find(smilies, function(val) {
+  var theSmilie = smilies.find(function(val) {
     return message.content == val.smilie;
   });
 
