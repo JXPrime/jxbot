@@ -5,7 +5,7 @@
     "main": "bot.js",
     "author": "JXPrime",
     "dependencies": {
-        "discord.js": "^12.2.0",
-        "underscore": "^1.10.2"
+        "discord.js": "^14.14.1",
+        "https": "^1.0.0"
     }
 }
