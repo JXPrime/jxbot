@@ -20,12 +20,12 @@ if(token === 'refresh') {
     res.on('end', () => {
       console.log('done');
       let fileNames = [];
-      let re = /\<img alt=\"\" src=\"([\w\:\/\.]+)/gi;
+      let re = /class=\"text\"\>(\:\w+\:)\<\/div\>\s+\<img alt=\"\" src=\"([\w\:\/\.]+)/gim;
       let matches;
       while((matches = re.exec(rawData)) != null){
-        let fileName = matches[1];
-        fileNames.push(fileName);
+        fileNames.push({fileName: matches[1], url: matches[2]});
     }
+    console.log(fileNames);
     process.exit();
       /* src="https://fi.somethingawful.com/safs/smilies/d/9/golf.001.gif"*/
     });
