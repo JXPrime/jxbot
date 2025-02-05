@@ -2,13 +2,13 @@ const Discord = require('discord.js')
 const client = new Discord.Client() 
 const fs = require('fs');
 const readline = require('readline');
-const https = require('node:https');
+//const https = require('node:https');
 
 const smilies = [];
 
 const token = process.argv[2];
 
-if(token === 'refresh') {
+if(token === 'refresh') { /*
   console.log('refreshing');
   https.get('https://forums.somethingawful.com/misc.php?action=showsmilies', (res) => {
     let rawData = ''
@@ -22,7 +22,7 @@ if(token === 'refresh') {
       console.log('done');
       console.log(rawData);
     });
-  });
+  }); */
 }
 else {
   async function processSmilies(){
