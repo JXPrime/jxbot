@@ -2,27 +2,34 @@ const Discord = require('discord.js')
 const client = new Discord.Client() 
 const fs = require('fs');
 const readline = require('readline');
-//const https = require('node:https');
+const https = require('https');
 
 const smilies = [];
 
 const token = process.argv[2];
 
-if(token === 'refresh') { /*
+if(token === 'refresh') { 
   console.log('refreshing');
   https.get('https://forums.somethingawful.com/misc.php?action=showsmilies', (res) => {
     let rawData = ''
 
     res.on('data', chunk => {
-      console.log('got data');
       rawData += chunk;
     });
     
     res.on('end', () => {
       console.log('done');
-      console.log(rawData);
+      let fileNames = [];
+      let re = /\<img alt=\"\" src=\"([\w\:\/\.]+)/gi;
+      let matches;
+      while((matches = re.exec(rawData)) != null){
+        let fileName = matches[1];
+        fileNames.push(fileName);
+    }
+    process.exit();
+      /* src="https://fi.somethingawful.com/safs/smilies/d/9/golf.001.gif"*/
     });
-  }); */
+  });
 }
 else {
   async function processSmilies(){
